@@ -1,4 +1,21 @@
 <div class="container">
+  <div *ngIf="sucessMessage" class="sucess-message">
+    {{ sucessMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  <div class="form">
+    <div>
+      <label>ID</label><input type="text" class="id">
+    </div>
+    <div>
+      <label>Nome</label><input type="text">
+    </div>
+    <div>
+      <label>Email</label><input type="text">
+    </div>
+  </div>
   <table>
     <thead>
       <th>Id</th>
@@ -8,8 +25,8 @@
     <tbody>
       <tr *ngFor="let pessoa of pessoas$ | async">
         <td>{{ pessoa.id }}</td>
-        <td>{{pessoa.nome_pessoa}}</td>
-        <td>{{pessoa.email_principal}}</td>
+        <td>{{ pessoa.nome_pessoa }}</td>
+        <td>{{ pessoa.email_principal }}</td>
       </tr>
     </tbody>
   </table>
