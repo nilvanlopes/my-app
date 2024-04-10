@@ -1,0 +1,16 @@
+<div class="container">
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>E-mail</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pessoa of pessoas$ | async">
+        <td>{{ pessoa.id }}</td>
+        <td>{{pessoa.nome_pessoa}}</td>
+        <td>{{pessoa.email_principal}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
