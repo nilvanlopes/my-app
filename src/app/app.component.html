@@ -6,25 +6,31 @@
     {{ errorMessage }}
   </div>
   <div class="form">
-    <div>
-      <label>ID</label>
-      <input type="text" disabled class="id" [(ngModel)]="form_id">
-    </div>
-    <div>
-      <label>Nome</label>
-      <input type="text" [(ngModel)]="form_nome_pessoa">
-    </div>
-    <div>
-      <label>Email</label>
-      <input type="text" [(ngModel)]="form_email_principal">
-    </div>
-    <div>
-      <label>Telefone</label>
-      <input type="text" [(ngModel)]="form_fone_cel">
-    </div>
-    <button (click)="buttonClick()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>ID</mat-label>
+      <input matInput readonly placeholder="id" [(ngModel)]="form_id">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="nome" [(ngModel)]="form_nome_pessoa">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email" [(ngModel)]="form_email_principal">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Telefone</mat-label>
+      <input matInput placeholder="Telefone" [(ngModel)]="form_fone_cel">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="buttonClick()">
       {{form_id ? 'Salvar':'Criar'}}
     </button>
+
   </div>
   <table>
     <thead>

@@ -1,48 +1,61 @@
 .container {
+  --mdc-outlined-text-field-label-text-color: #000;
+  --mdc-outlined-text-field-outline-color: #000;
+  --mdc-outlined-text-field-hover-outline-color: #594dce;
+  --mdc-outlined-text-field-hover-label-text-color: #594dce;
+  --mdc-outlined-text-field-input-text-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-.form{
-  display: flex;
-  gap: 5px;
-  padding: 10px;
-  div{
+
+  .form {
+    height: 50px;
     display: flex;
-    gap: 2px;
-    .id{
-      width: 20px;
+    align-items: top;
+    justify-content: top;
+    gap: 5px;
+    padding-bottom: 80px;
+
+    button {
+      height: 56px;
     }
   }
-}
+
   table {
     border: 1px solid;
     border-bottom: none;
     border-spacing: inherit;
+
     thead {
       border: 1px solid #000;
+
       th {
         border-bottom: 1px solid #000;
         border-left: 1px solid #000;
         padding: 5px;
       }
+
       :first-child {
         border-left: none;
       }
     }
+
     tbody {
       tr {
         td {
           border-left: 1px solid #000;
           border-bottom: 1px solid #000;
           padding: 5px;
-          span{
+
+          span {
             cursor: pointer;
             padding-left: 20px;
           }
         }
+
         :first-child {
           border-left: none;
         }
