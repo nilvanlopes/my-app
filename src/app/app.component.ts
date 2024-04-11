@@ -35,6 +35,7 @@ export class AppComponent {
   form_id = '';
   form_nome_pessoa = '';
   form_email_principal = '';
+  form_fone_cel = '';
 
   constructor(private PessoaService: PessoaService) {
     this.obterPessoasCadastradas();
@@ -46,12 +47,13 @@ export class AppComponent {
     this.form_id = pessoa.id!.toString();
     this.form_nome_pessoa = pessoa.nome_pessoa;
     this.form_email_principal = pessoa.email_principal;
+    this.form_fone_cel = pessoa.fone_cel;
   }
   buttonClick() {
     this.errorMessage = '';
     this.sucessMessage = '';
 
-    if (!this.form_nome_pessoa || this.form_email_principal) {
+    if (!this.form_nome_pessoa || !this.form_email_principal) {
       return;
     }
     if (this.form_id) {
@@ -65,7 +67,7 @@ export class AppComponent {
     this.PessoaService.cadastrarPessoa({
       nome_pessoa: this.form_nome_pessoa,
       email_principal: this.form_email_principal,
-    }).subscribe({
+    fone_cel:this.form_fone_cel}).subscribe({
       next: (_) => {
         this.errorMessage = '';
         this.sucessMessage = '';
@@ -84,7 +86,7 @@ export class AppComponent {
       id: parseInt(this.form_id),
       nome_pessoa: this.form_nome_pessoa,
       email_principal: this.form_email_principal,
-    }).subscribe({
+      fone_cel:this.form_fone_cel}).subscribe({
       next: (_) => {
         this.errorMessage = '';
         this.sucessMessage = '';
@@ -94,6 +96,21 @@ export class AppComponent {
         this.sucessMessage = '';
         this.errorMessage =
           'Ocorreu um erro desconhecido ao alterar a pessoa. Detalhes' +
+          this.errorMessage;
+      },
+    });
+  }
+  apagar(id:number){
+    this.PessoaService.apagarPessoa(id).subscribe({
+      next: (_) => {
+        this.errorMessage = '';
+        this.sucessMessage = '';
+        this.obterPessoasCadastradas();
+      },
+      error: (error) => {
+        this.sucessMessage = '';
+        this.errorMessage =
+          'Ocorreu um erro desconhecido ao remover a pessoa. Detalhes' +
           this.errorMessage;
       },
     });

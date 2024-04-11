@@ -7,26 +7,45 @@
   </div>
   <div class="form">
     <div>
-      <label>ID</label><input type="text" class="id">
+      <label>ID</label>
+      <input type="text" disabled class="id" [(ngModel)]="form_id">
     </div>
     <div>
-      <label>Nome</label><input type="text">
+      <label>Nome</label>
+      <input type="text" [(ngModel)]="form_nome_pessoa">
     </div>
     <div>
-      <label>Email</label><input type="text">
+      <label>Email</label>
+      <input type="text" [(ngModel)]="form_email_principal">
     </div>
+    <div>
+      <label>Telefone</label>
+      <input type="text" [(ngModel)]="form_fone_cel">
+    </div>
+    <button (click)="buttonClick()">
+      {{form_id ? 'Salvar':'Criar'}}
+    </button>
   </div>
   <table>
     <thead>
-      <th>Id</th>
-      <th>Nome</th>
-      <th>E-mail</th>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th></th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let pessoa of pessoas$ | async">
         <td>{{ pessoa.id }}</td>
         <td>{{ pessoa.nome_pessoa }}</td>
         <td>{{ pessoa.email_principal }}</td>
+        <td>{{ pessoa.fone_cel }}</td>
+        <td>
+          <span (click)="preencherCampos(pessoa)">alterar</span>
+          <span (click)="apagar(pessoa.id!)">remover</span>
+        </td>
       </tr>
     </tbody>
   </table>
