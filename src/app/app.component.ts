@@ -35,7 +35,7 @@ export class AppComponent {
   form_id = '';
   form_nome_pessoa = '';
   form_email_principal = '';
-  form_fone_cel = '';
+  form_fone_res = '';
 
   constructor(private PessoaService: PessoaService) {
     this.obterPessoasCadastradas();
@@ -47,7 +47,7 @@ export class AppComponent {
     this.form_id = pessoa.id!.toString();
     this.form_nome_pessoa = pessoa.nome_pessoa;
     this.form_email_principal = pessoa.email_principal;
-    this.form_fone_cel = pessoa.fone_cel;
+    this.form_fone_res = pessoa.fone_res;
   }
   buttonClick() {
     this.errorMessage = '';
@@ -67,7 +67,7 @@ export class AppComponent {
     this.PessoaService.cadastrarPessoa({
       nome_pessoa: this.form_nome_pessoa,
       email_principal: this.form_email_principal,
-    fone_cel:this.form_fone_cel}).subscribe({
+    fone_res:this.form_fone_res}).subscribe({
       next: (_) => {
         this.errorMessage = '';
         this.sucessMessage = '';
@@ -86,7 +86,7 @@ export class AppComponent {
       id: parseInt(this.form_id),
       nome_pessoa: this.form_nome_pessoa,
       email_principal: this.form_email_principal,
-      fone_cel:this.form_fone_cel}).subscribe({
+      fone_res:this.form_fone_res}).subscribe({
       next: (_) => {
         this.errorMessage = '';
         this.sucessMessage = '';

@@ -24,7 +24,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Telefone</mat-label>
-      <input matInput placeholder="Telefone" [(ngModel)]="form_fone_cel">
+      <input matInput placeholder="Telefone" [(ngModel)]="form_fone_res">
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="buttonClick()">
@@ -47,7 +47,7 @@
         <td>{{ pessoa.id }}</td>
         <td>{{ pessoa.nome_pessoa }}</td>
         <td>{{ pessoa.email_principal }}</td>
-        <td>{{ pessoa.fone_cel }}</td>
+        <td>{{ pessoa.fone_res }}</td>
         <td>
           <span (click)="preencherCampos(pessoa)">alterar</span>
           <span (click)="apagar(pessoa.id!)">remover</span>
