@@ -23,3 +23,13 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+body {
+  background: rgb(206, 238, 249);
+  background: linear-gradient(10deg, rgba(206, 238, 249, 1) 0%, rgba(20, 22, 43, 1) 0%, rgba(207, 224, 240, 1) 0%, rgba(61, 70, 93, 1) 0%, rgba(212, 236, 253, 1) 100%);
+  --mdc-outlined-text-field-label-text-color: #000;
+  --mdc-outlined-text-field-outline-color: #000;
+  --mdc-outlined-text-field-hover-outline-color: #594dce;
+  --mdc-outlined-text-field-hover-label-text-color: #594dce;
+  --mdc-outlined-text-field-input-text-color: #000;
+}
