@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  private validUsername = 'pyu'
-  private validPassword = 'pyu'
+  private validUsername = 'nilvan'
+  private validPassword = '321'
   constructor() { }
   login(username:string,password:string):
     boolean{
